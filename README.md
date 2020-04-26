@@ -2,32 +2,31 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|text|null: false|
+|name|string|null: false|
 |email|text|null: false, unique: true|
 |password|text|null: false|
 
 ### Association
 - has_many :messages
 - has_many :groups, through: :groups_users
-
+- belongs_to :groups_users
 
 ## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|group_name|text|null: false, unique: true|
-|user_id|integer|null: false, foreign_key: true|
+|name|string|null: false, unique: true|
 
 ### Association
 - has_many :messages
 - has_many :users, through: :groups_users
-
+- belongs_to :groups_users
 
 ## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
+|body|text||
 |image|string||
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
