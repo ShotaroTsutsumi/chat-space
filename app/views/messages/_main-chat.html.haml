@@ -2,52 +2,37 @@
   .header
     .left-box
       .left-box__current-group
-        現在グループ名
+        = @group.name
       %ul.left-box__member-list
         Member : 
         %li.member
-          メンバー名
-        %li.member
-          メンバー名
-        %li.member
-          メンバー名
+          - @group.users.each do |user|
+            = user.name
+       
     .right-box
       .right-box__edit-btn
-        = link_to '#' do
+        = link_to edit_group_path(@group) do
           Edit
   .message-list
-    .message
-      .upper-info
-        .upper-info__talker
-          メンバー
-        .upper-info__date
-          2020/5/02
-      .lower-info
-        .lower-info__content
-          メッセージ
-    .message
-      .upper-info
-        .upper-info__talker
-          メンバー
-        .upper-info__date
-          2020/5/02
-      .lower-info
-        .lower-info__content
-          メッセージ
-    .message
-      .upper-info
-        .upper-info__talker
-          メンバー
-        .upper-info__date
-          2020/5/02
-      .lower-info
-        .lower-info__content
-          メッセージ
+    = render @messages
   .message-form
     .form
-      %input.form__text
-      .form__image
-        %label.form__image__picture
-          = icon('fa','image',class: 'icon')
-          %input.hidden{type: 'file'}
-    %input.form__submit-btn{type: 'submit', value: 'Send'}
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__text', placeholder: 'type a message'
+        .form__image
+          =f.label :image, class: 'form__image__picture' do
+            = icon('fa','image',class: 'icon')
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit-btn'
+
+
+
+
+        -#     %input.hidden{type: 'file'}
+        -# %input.form__submit-btn{type: 'submit', value: 'Send'}
+
+
+      -#   = f.label :image, class: 'form__image__picture' do
+      -#     = icon('fas','image',class: 'icon')
+      -#     = f.file_field :image, class: 'hidden'
+      -# = f.submit 'Send', class: 'form__submit-btn'

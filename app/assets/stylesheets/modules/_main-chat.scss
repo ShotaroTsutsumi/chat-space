@@ -68,42 +68,39 @@
   .message-form {
     height: 90px;
     background-color: #d2d2d2;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     padding: 0 40px;
-    .form {
-      height: 50px;
-      width: 100%;
-      background-color: white;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: relative;
-    }
-      .form__text {
-        height: 100%;
-        width: 100%;
-        padding-left: 10px;
-        padding-right: 40px;
-        border: none;
+      .new_message {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
       }
-      .form__image {
-        position: absolute;
-        right: 10px;
-          .icon {
-            font-size: 25px;
+        .form__text {
+          height: 50px;
+          width: 100%;
+          margin-top: 20px;
+          padding-left: 10px;
+          padding-right: 40px;
+          border: none;
+        }
+        .form__image {
+          position: absolute;
+          right: 113px;
+          top: 33px;
+            .icon {
+              font-size: 25px;
+            }
+            .hidden {
+              display: none;
+            }
+        }
+        .form__submit-btn {
+            margin-left: 15px;
+            margin-top: 20px;
+            width: 100px;
+            background-color: #38aef0;
+            color: white;
+            height: 50px;
           }
-          .hidden {
-            display: none;
-          }
-      }
-    .form__submit-btn {
-        margin-left: 15px;
-        width: 100px;
-        background-color: #38aef0;
-        color: white;
-        height: 50px;
-      }
      }
     }
