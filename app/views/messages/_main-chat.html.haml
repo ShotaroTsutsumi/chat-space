@@ -8,7 +8,6 @@
         %li.member
           - @group.users.each do |user|
             = user.name
-       
     .right-box
       .right-box__edit-btn
         = link_to edit_group_path(@group) do
