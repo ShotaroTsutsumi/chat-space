@@ -65,3 +65,7 @@ gem 'devise'
 
 gem 'carrierwave'
 gem 'mini_magick'
+
+group :production do
+  gem 'unicorn', '5.4.1'
+end
