@@ -8,4 +8,4 @@
     - if message.content.present?
       %p.lower-info__content
         = message.content
-    = image_tag message.image.url, class: 'lower-info__image' if message.image.present?
+      = image_tag message.image.url, class: 'lower-info__image' if message.image.present?
