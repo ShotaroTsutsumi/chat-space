@@ -33,6 +33,9 @@
     padding: 0 20px;
     .group {
       padding: 20px 0px 40px;
+      a {
+        text-decoration: none;
+      }
       &__name {
         font-size: 15px;
         padding-bottom: 5px;
